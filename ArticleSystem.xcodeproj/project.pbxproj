@@ -18,6 +18,7 @@
 		E4DE872C22FBFC510093C717 /* ArticleSystemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE872B22FBFC510093C717 /* ArticleSystemUITests.swift */; };
 		E4DE873A22FBFF1F0093C717 /* Models in Resources */ = {isa = PBXBuildFile; fileRef = E4DE873922FBFF1F0093C717 /* Models */; };
 		E4DE873C22FBFF370093C717 /* Controllers in Resources */ = {isa = PBXBuildFile; fileRef = E4DE873B22FBFF370093C717 /* Controllers */; };
+		E4DE873E22FC017E0093C717 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4DE873D22FC017E0093C717 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		E4DE872D22FBFC510093C717 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4DE873922FBFF1F0093C717 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
 		E4DE873B22FBFF370093C717 /* Controllers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Controllers; sourceTree = "<group>"; };
+		E4DE873D22FC017E0093C717 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F737A30CF0BB5CAFFDFF97C5 /* Pods-ArticleSystem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArticleSystem.release.xcconfig"; path = "Target Support Files/Pods-ArticleSystem/Pods-ArticleSystem.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +148,7 @@
 				E4DE871222FBFC510093C717 /* Assets.xcassets */,
 				E4DE871422FBFC510093C717 /* LaunchScreen.storyboard */,
 				E4DE871722FBFC510093C717 /* Info.plist */,
+				E4DE873D22FC017E0093C717 /* GoogleService-Info.plist */,
 			);
 			path = ArticleSystem;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				E4DE871322FBFC510093C717 /* Assets.xcassets in Resources */,
 				E4DE873A22FBFF1F0093C717 /* Models in Resources */,
 				E4DE871122FBFC500093C717 /* Main.storyboard in Resources */,
+				E4DE873E22FC017E0093C717 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
