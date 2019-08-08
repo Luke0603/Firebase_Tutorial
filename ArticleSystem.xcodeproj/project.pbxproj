@@ -10,14 +10,16 @@
 		56D5536B638D7490AC05BE03 /* Pods_ArticleSystemTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F88951ACEDC8A2FA2633BD /* Pods_ArticleSystemTests.framework */; };
 		6BA85A6AF6D3A26C13CD6066 /* Pods_ArticleSystemUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4265985CFF353A5CAF8EF4D /* Pods_ArticleSystemUITests.framework */; };
 		D14C22DB242C82F63EA1A585 /* Pods_ArticleSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039E88EABA081AF98BFC09ED /* Pods_ArticleSystem.framework */; };
+		E44C557F22FC195B00908541 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C557E22FC195B00908541 /* LoginViewController.swift */; };
+		E44C558122FC19DB00908541 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C558022FC19DB00908541 /* ViewController.swift */; };
+		E44C558322FC19DE00908541 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C558222FC19DE00908541 /* User.swift */; };
+		E44C558722FC246300908541 /* ArticleSystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C558622FC246300908541 /* ArticleSystemViewController.swift */; };
 		E4DE870C22FBFC500093C717 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE870B22FBFC500093C717 /* AppDelegate.swift */; };
 		E4DE871122FBFC500093C717 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4DE870F22FBFC500093C717 /* Main.storyboard */; };
 		E4DE871322FBFC510093C717 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4DE871222FBFC510093C717 /* Assets.xcassets */; };
 		E4DE871622FBFC510093C717 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4DE871422FBFC510093C717 /* LaunchScreen.storyboard */; };
 		E4DE872122FBFC510093C717 /* ArticleSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE872022FBFC510093C717 /* ArticleSystemTests.swift */; };
 		E4DE872C22FBFC510093C717 /* ArticleSystemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE872B22FBFC510093C717 /* ArticleSystemUITests.swift */; };
-		E4DE873A22FBFF1F0093C717 /* Models in Resources */ = {isa = PBXBuildFile; fileRef = E4DE873922FBFF1F0093C717 /* Models */; };
-		E4DE873C22FBFF370093C717 /* Controllers in Resources */ = {isa = PBXBuildFile; fileRef = E4DE873B22FBFF370093C717 /* Controllers */; };
 		E4DE873E22FC017E0093C717 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4DE873D22FC017E0093C717 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,10 @@
 		9734B1F48BAE53E94C27CC4F /* Pods-ArticleSystemTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArticleSystemTests.release.xcconfig"; path = "Target Support Files/Pods-ArticleSystemTests/Pods-ArticleSystemTests.release.xcconfig"; sourceTree = "<group>"; };
 		C4265985CFF353A5CAF8EF4D /* Pods_ArticleSystemUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArticleSystemUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E276F2DDB5FEB3F202C92F1C /* Pods-ArticleSystemUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArticleSystemUITests.debug.xcconfig"; path = "Target Support Files/Pods-ArticleSystemUITests/Pods-ArticleSystemUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E44C557E22FC195B00908541 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E44C558022FC19DB00908541 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E44C558222FC19DE00908541 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E44C558622FC246300908541 /* ArticleSystemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleSystemViewController.swift; sourceTree = "<group>"; };
 		E4DE870822FBFC500093C717 /* ArticleSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArticleSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4DE870B22FBFC500093C717 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4DE871022FBFC500093C717 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,9 +65,8 @@
 		E4DE872722FBFC510093C717 /* ArticleSystemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArticleSystemUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4DE872B22FBFC510093C717 /* ArticleSystemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleSystemUITests.swift; sourceTree = "<group>"; };
 		E4DE872D22FBFC510093C717 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4DE873922FBFF1F0093C717 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
-		E4DE873B22FBFF370093C717 /* Controllers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Controllers; sourceTree = "<group>"; };
 		E4DE873D22FC017E0093C717 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E4DE873F22FC049C0093C717 /* ArticleSystem.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArticleSystem.entitlements; sourceTree = "<group>"; };
 		F737A30CF0BB5CAFFDFF97C5 /* Pods-ArticleSystem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArticleSystem.release.xcconfig"; path = "Target Support Files/Pods-ArticleSystem/Pods-ArticleSystem.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +121,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E44C558422FC19F600908541 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E44C558222FC19DE00908541 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E44C558522FC1A0800908541 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E44C557E22FC195B00908541 /* LoginViewController.swift */,
+				E44C558022FC19DB00908541 /* ViewController.swift */,
+				E44C558622FC246300908541 /* ArticleSystemViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		E4DE86FF22FBFC500093C717 = {
 			isa = PBXGroup;
 			children = (
@@ -141,8 +164,9 @@
 		E4DE870A22FBFC500093C717 /* ArticleSystem */ = {
 			isa = PBXGroup;
 			children = (
-				E4DE873922FBFF1F0093C717 /* Models */,
-				E4DE873B22FBFF370093C717 /* Controllers */,
+				E44C558422FC19F600908541 /* Models */,
+				E44C558522FC1A0800908541 /* Controllers */,
+				E4DE873F22FC049C0093C717 /* ArticleSystem.entitlements */,
 				E4DE870B22FBFC500093C717 /* AppDelegate.swift */,
 				E4DE870F22FBFC500093C717 /* Main.storyboard */,
 				E4DE871222FBFC510093C717 /* Assets.xcassets */,
@@ -243,6 +267,11 @@
 				TargetAttributes = {
 					E4DE870722FBFC500093C717 = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					E4DE871B22FBFC510093C717 = {
 						CreatedOnToolsVersion = 10.3;
@@ -279,10 +308,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4DE873C22FBFF370093C717 /* Controllers in Resources */,
 				E4DE871622FBFC510093C717 /* LaunchScreen.storyboard in Resources */,
 				E4DE871322FBFC510093C717 /* Assets.xcassets in Resources */,
-				E4DE873A22FBFF1F0093C717 /* Models in Resources */,
 				E4DE871122FBFC500093C717 /* Main.storyboard in Resources */,
 				E4DE873E22FC017E0093C717 /* GoogleService-Info.plist in Resources */,
 			);
@@ -395,6 +422,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E44C558722FC246300908541 /* ArticleSystemViewController.swift in Sources */,
+				E44C558322FC19DE00908541 /* User.swift in Sources */,
+				E44C558122FC19DB00908541 /* ViewController.swift in Sources */,
+				E44C557F22FC195B00908541 /* LoginViewController.swift in Sources */,
 				E4DE870C22FBFC500093C717 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,7 +602,9 @@
 			baseConfigurationReference = 176114DBFE8FE01AD2735F51 /* Pods-ArticleSystem.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ArticleSystem/ArticleSystem.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KZW8Q88296;
 				INFOPLIST_FILE = ArticleSystem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -589,7 +622,9 @@
 			baseConfigurationReference = F737A30CF0BB5CAFFDFF97C5 /* Pods-ArticleSystem.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ArticleSystem/ArticleSystem.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KZW8Q88296;
 				INFOPLIST_FILE = ArticleSystem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
