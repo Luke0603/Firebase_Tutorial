@@ -9,73 +9,60 @@
 import UIKit
 import Firebase
 
-class ArticleSystemViewController: UIViewController {
+class ArticleSystemViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let ref = Database.database().reference(withPath: "article-items")
     
     let usersRef = Database.database().reference(withPath: "online")
     
+    var items: [ArticleItem] = []
+    
+    @IBOutlet weak var articleTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        articleTableView.delegate = self
+        articleTableView.dataSource = self
+        articleTableView.rowHeight = UITableView.automaticDimension
+        articleTableView.allowsMultipleSelectionDuringEditing = false
+        
+        ref.observe(.value, with: { snapshot in
+            
+            var newItems: [ArticleItem] = []
+            
+            for child in snapshot.children {
+                if let snapshot = child as? DataSnapshot,
+                    let groceryItem = ArticleItem(snapshot: snapshot) {
+                    newItems.append(groceryItem)
+                }
+            }
+            
+            self.items = newItems
+            print("============> items: \(self.items)")
+            self.articleTableView.reloadData()
+        })
         // Do any additional setup after loading the view.
     }
     @IBAction func addArticleButtonTouch(_ sender: Any) {
         
         performSegue(withIdentifier: "ListToAdd", sender: nil)
         
-        //        let uiTitleLabel = UILabel()
-        //        uiTitleLabel.text = "標題"
-        //
-        //        let uiNameLabel = UILabel()
-        //        uiNameLabel.text = "姓名"
-        //
-        //        let uiContentLabel = UILabel()
-        //        uiContentLabel.text = "內容"
-        //
-        //        let textView = UITextView()
-        //
-        //        let alert = UIAlertController(title: "新文章",
-        //                                      message: "請輸入標題/內容/姓名",
-        //                                      preferredStyle: .alert)
-        //
-        //        let cancelAction = UIAlertAction(title: "Cancel",
-        //                                         style: .cancel)
-        //
-        //        alert.view.addSubview(uiTitleLabel)
-        //        alert.addTextField { textTitle in
-        //            textTitle.placeholder = "Enter your Title"
-        //        }
-        //
-        //        alert.view.addSubview(uiNameLabel)
-        //        alert.addTextField { textName in
-        //            textName.placeholder = "Enter your Name"
-        //        }
-        //
-        //        alert.view.addSubview(uiContentLabel)
-        //        alert.view.addSubview(textView)
-        //
-        //        alert.addAction(cancelAction)
-        //
-        //        present(alert, animated: true, completion: nil)
-        
     }
     
     @IBAction func signoutButtonPressed(_ sender: Any) {
-        // 1
+        
         let user = Auth.auth().currentUser!
         let onlineRef = Database.database().reference(withPath: "online/\(user.uid)")
         
-        // 2
         onlineRef.removeValue { (error, _) in
             
-            // 3
             if let error = error {
                 print("Removing online failed: \(error)")
                 return
             }
             
-            // 4
+            
             do {
                 try Auth.auth().signOut()
                 self.dismiss(animated: true, completion: nil)
@@ -83,6 +70,68 @@ class ArticleSystemViewController: UIViewController {
                 print("Auth sign out failed: \(error)")
             }
         }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("===========> items.count: \(self.items.count)")
+        return self.items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell: UITableViewCell = UITableViewCell()
+        
+        if let articleCell = articleTableView.dequeueReusableCell(withIdentifier: "articleTableViewCell") as? ArticleSystemTableViewCell {
+            let articleItem = self.items[indexPath.item]
+            
+            articleCell.articleTitle.text = articleItem.title
+            articleCell.articleContent.text = articleItem.content
+            
+            articleCell.isLikeButton.tag = indexPath.item
+            
+            articleCell.isLikeButton.addTarget(self,action: #selector(ArticleSystemViewController.likeButtonClicked(_:)), for: .touchUpInside)
+            
+            //設置圓角
+            articleCell.isLikeButton.layer.masksToBounds = true
+            articleCell.isLikeButton.layer.cornerRadius = 10
+            //邊框粗細
+            articleCell.isLikeButton.layer.borderWidth = 0.5
+            //設置邊框
+            articleCell.isLikeButton.layer.borderColor = UIColor.black.cgColor
+            
+            if articleItem.isLike {
+                articleCell.isLikeButton.backgroundColor = .red
+            } else {
+                articleCell.isLikeButton.backgroundColor = .yellow
+            }
+            
+            cell = articleCell
+        }
+        return cell
+    }
+    
+    @objc func likeButtonClicked(_ sender:UIButton)
+    {
+        print("==============> sender.tag: \(sender.tag)")
+        
+        var articleItem = self.items[sender.tag]
+        
+        let articleItemRef = self.ref.child(articleItem.title.lowercased())
+        
+        if articleItem.isLike {
+            articleItem.isLike = false
+            sender.backgroundColor = .yellow
+        } else {
+            articleItem.isLike = true
+            sender.backgroundColor = .red
+        }
+        
+        articleItemRef.setValue(articleItem.toAnyObject())
+        
+        self.articleTableView.reloadData()
     }
     /*
      // MARK: - Navigation

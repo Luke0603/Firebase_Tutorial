@@ -32,11 +32,10 @@ class AddArticleViewController: UIViewController {
             guard let user = user else { return }
             self.user = User(authData: user)
             
-            // 1
             let currentUserRef = self.usersRef.child(self.user.uid)
-            // 2
+            
             currentUserRef.setValue(self.user.email)
-            // 3
+            
             currentUserRef.onDisconnectRemoveValue()
         }
         // Do any additional setup after loading the view.
@@ -61,7 +60,7 @@ class AddArticleViewController: UIViewController {
         
         let dateString: String = dateFormat.string(from: now)
         
-        let articleItem = ArticleItem(FirstName: firstName, LastName: lastName, AddByUser: self.user.email, Title: title, Content: content, ArtDate: dateString)
+        let articleItem = ArticleItem(FirstName: firstName, LastName: lastName, AddByUser: self.user.email, Title: title, Content: content, ArtDate: dateString, IsLike: false)
         
         print("========>ArticleItem:\(articleItem)")
         
@@ -70,6 +69,11 @@ class AddArticleViewController: UIViewController {
         print("========>ArticleItemRef:\(articleItemRef)")
         
         articleItemRef.setValue(articleItem.toAnyObject())
+        
+        artTitle.text?.removeAll()
+        artLastName.text?.removeAll()
+        artFirstName.text?.removeAll()
+        artContent.text?.removeAll()
     }
     /*
      // MARK: - Navigation

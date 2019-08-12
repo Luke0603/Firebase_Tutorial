@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 struct ArticleItem {
-
+    
     let ref: DatabaseReference?
     let key: String
     let firstName: String
@@ -19,14 +19,16 @@ struct ArticleItem {
     let title: String
     let content: String
     let artDate: String
-
-    init(FirstName firstName: String, LastName lastName: String, AddByUser addByUser: String, Title title: String, Content content: String, ArtDate artDate: String, Key key: String = "") {
+    var isLike: Bool
+    
+    init(FirstName firstName: String, LastName lastName: String, AddByUser addByUser: String, Title title: String, Content content: String, ArtDate artDate: String, IsLike isLike: Bool, Key key: String = "") {
         self.firstName = firstName
         self.lastName = lastName
         self.addByUser = addByUser
         self.title = title
         self.content = content
         self.artDate = artDate
+        self.isLike = isLike
         self.ref = nil
         self.key = key
     }
@@ -39,7 +41,8 @@ struct ArticleItem {
             let addByUser = value["addByUser"] as? String,
             let title = value["title"] as? String,
             let content = value["content"] as? String,
-            let artDate = value["artDate"] as? String else {
+            let artDate = value["artDate"] as? String,
+            let isLike = value["isLike"] as? Bool else {
                 return nil
         }
         
@@ -51,6 +54,7 @@ struct ArticleItem {
         self.title = title
         self.content = content
         self.artDate = artDate
+        self.isLike = isLike
     }
     
     func toAnyObject() -> Any {
@@ -60,7 +64,8 @@ struct ArticleItem {
             "addByUser" : addByUser,
             "title" : title,
             "content" : content,
-            "artDate" : artDate
+            "artDate" : artDate,
+            "isLike" : isLike
         ]
     }
     

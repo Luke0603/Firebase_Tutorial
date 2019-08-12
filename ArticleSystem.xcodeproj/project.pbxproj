@@ -16,6 +16,7 @@
 		E44C558722FC246300908541 /* ArticleSystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C558622FC246300908541 /* ArticleSystemViewController.swift */; };
 		E44C558922FC386200908541 /* AddArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C558822FC386200908541 /* AddArticleViewController.swift */; };
 		E44C558B22FEC2D800908541 /* ArticleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C558A22FEC2D800908541 /* ArticleItem.swift */; };
+		E44C5590230093D700908541 /* ArticleSystemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44C558F230093D700908541 /* ArticleSystemTableViewCell.swift */; };
 		E4DE870C22FBFC500093C717 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DE870B22FBFC500093C717 /* AppDelegate.swift */; };
 		E4DE871122FBFC500093C717 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4DE870F22FBFC500093C717 /* Main.storyboard */; };
 		E4DE871322FBFC510093C717 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4DE871222FBFC510093C717 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		E44C558622FC246300908541 /* ArticleSystemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleSystemViewController.swift; sourceTree = "<group>"; };
 		E44C558822FC386200908541 /* AddArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArticleViewController.swift; sourceTree = "<group>"; };
 		E44C558A22FEC2D800908541 /* ArticleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleItem.swift; sourceTree = "<group>"; };
+		E44C558F230093D700908541 /* ArticleSystemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleSystemTableViewCell.swift; sourceTree = "<group>"; };
 		E4DE870822FBFC500093C717 /* ArticleSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArticleSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4DE870B22FBFC500093C717 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4DE871022FBFC500093C717 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -145,6 +147,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		E44C558E2300938100908541 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E44C558F230093D700908541 /* ArticleSystemTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		E4DE86FF22FBFC500093C717 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +183,7 @@
 				E4DE873F22FC049C0093C717 /* ArticleSystem.entitlements */,
 				E44C558422FC19F600908541 /* Models */,
 				E44C558522FC1A0800908541 /* Controllers */,
+				E44C558E2300938100908541 /* Cells */,
 				E4DE870B22FBFC500093C717 /* AppDelegate.swift */,
 				E4DE870F22FBFC500093C717 /* Main.storyboard */,
 				E4DE871222FBFC510093C717 /* Assets.xcassets */,
@@ -434,6 +445,7 @@
 				E44C558122FC19DB00908541 /* ViewController.swift in Sources */,
 				E44C557F22FC195B00908541 /* LoginViewController.swift in Sources */,
 				E4DE870C22FBFC500093C717 /* AppDelegate.swift in Sources */,
+				E44C5590230093D700908541 /* ArticleSystemTableViewCell.swift in Sources */,
 				E44C558922FC386200908541 /* AddArticleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
