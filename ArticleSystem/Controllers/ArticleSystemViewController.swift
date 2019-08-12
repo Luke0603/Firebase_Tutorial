@@ -13,9 +13,17 @@ class ArticleSystemViewController: UIViewController, UITableViewDataSource, UITa
     
     let ref = Database.database().reference(withPath: "article-items")
     
+    let refArray = Database.database().reference(withPath: "article-array")
+    
     let usersRef = Database.database().reference(withPath: "online")
     
+    var user: User!
+    
+    var userMail: String = ""
+    
     var items: [ArticleItem] = []
+    
+    var itemsByName: [ArticleItem] = []
     
     @IBOutlet weak var articleTableView: UITableView!
     
@@ -39,9 +47,44 @@ class ArticleSystemViewController: UIViewController, UITableViewDataSource, UITa
             }
             
             self.items = newItems
-            print("============> items: \(self.items)")
             self.articleTableView.reloadData()
         })
+        
+        Auth.auth().addStateDidChangeListener { auth, user in
+            guard let user = user else { return }
+            self.user = User(authData: user)
+            
+            let currentUserRef = self.usersRef.child(self.user.uid)
+            
+            currentUserRef.setValue(self.user.email)
+            
+            currentUserRef.onDisconnectRemoveValue()
+        }
+        
+        userMail = Auth.auth().currentUser?.email ?? ""
+        //指定欄位的值為查詢條件
+        print("===========> user.email: \(self.userMail)")
+        
+        ref.queryOrdered(byChild: "addByUser").queryEqual(toValue: self.userMail).observe(.value, with: { snapshot in
+            
+            var newItems: [ArticleItem] = []
+            
+            for child in snapshot.children {
+                if let snapshot = child as? DataSnapshot,
+                    let groceryItem = ArticleItem(snapshot: snapshot) {
+                    newItems.append(groceryItem)
+                }
+            }
+            
+            self.itemsByName = newItems
+            print("===========> itemsByName: \(self.itemsByName)")
+        })
+        
+        //儲存Array
+        let articleArray = ["firstArticle", "Bert", "Chen", "20190812", "I will be back!!!"]
+        
+        refArray.setValue(articleArray)
+        
         // Do any additional setup after loading the view.
     }
     @IBAction func addArticleButtonTouch(_ sender: Any) {
@@ -90,6 +133,7 @@ class ArticleSystemViewController: UIViewController, UITableViewDataSource, UITa
             articleCell.articleTitle.text = articleItem.title
             articleCell.articleContent.text = articleItem.content
             
+            //儲存這是第幾個cell的button
             articleCell.isLikeButton.tag = indexPath.item
             
             articleCell.isLikeButton.addTarget(self,action: #selector(ArticleSystemViewController.likeButtonClicked(_:)), for: .touchUpInside)

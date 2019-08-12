@@ -62,11 +62,7 @@ class AddArticleViewController: UIViewController {
         
         let articleItem = ArticleItem(FirstName: firstName, LastName: lastName, AddByUser: self.user.email, Title: title, Content: content, ArtDate: dateString, IsLike: false)
         
-        print("========>ArticleItem:\(articleItem)")
-        
         let articleItemRef = self.ref.child(title.lowercased())
-        
-        print("========>ArticleItemRef:\(articleItemRef)")
         
         articleItemRef.setValue(articleItem.toAnyObject())
         
